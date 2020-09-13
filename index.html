@@ -2,16 +2,27 @@
 layout: default
 ---
 
+<div class="about">
+    <div class="about_inner">
+        <p>Welcome!</p>
+        <p>
+            I’m Jaume Capdevila, a Software Engineer, gamer and dogs lover from Barcelona.
+            In this wiki I mostly write about programming.
+            If you want to stay tuned, you can check how to get subscribed <a
+                href="{% link _posts/2020-09-13-about-rss.md %}" target="__blank">here</a>.
+        </p>
+    </div>
+</div>
+
 <div class="posts">
+    <h2 class="post_year">2020</h2>
+
     {% for post in site.posts %}
     <article class="post">
-        <h1>
+        <p>
             <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-        </h1>
-        <div class="entry">
-            {{ post.excerpt }}
-            <p><a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a></p>
-        </div>
+            <span class="date">{{ post.date | date: "%m/%d" }}</span>
+        </p>
     </article>
     {% endfor %}
 </div>
